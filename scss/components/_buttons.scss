@@ -1,0 +1,244 @@
+// =============================================================================
+// BUTTONS
+// =============================================================================
+
+// Button base
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: $border-radius-md;
+  transition: all $transition-base;
+  white-space: nowrap;
+  
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+  
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.25);
+  }
+}
+
+// Button sizes
+.btn-sm {
+  padding: $spacing-xs $spacing-md;
+  font-size: $font-size-small;
+  border-radius: $border-radius-sm;
+}
+
+.btn-lg {
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-large;
+  border-radius: $border-radius-lg;
+}
+
+// Button variants
+.btn-primary {
+  color: $white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover {
+    color: $white;
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+  
+  &:active {
+    background-color: darken($primary-color, 15%);
+    border-color: darken($primary-color, 15%);
+  }
+}
+
+.btn-secondary {
+  color: $white;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  
+  &:hover {
+    color: $white;
+    background-color: $secondary-dark;
+    border-color: $secondary-dark;
+  }
+  
+  &:active {
+    background-color: darken($secondary-color, 15%);
+    border-color: darken($secondary-color, 15%);
+  }
+}
+
+.btn-accent {
+  color: $white;
+  background-color: $accent-color;
+  border-color: $accent-color;
+  
+  &:hover {
+    color: $white;
+    background-color: darken($accent-color, 10%);
+    border-color: darken($accent-color, 10%);
+  }
+  
+  &:active {
+    background-color: darken($accent-color, 15%);
+    border-color: darken($accent-color, 15%);
+  }
+}
+
+.btn-outline-primary {
+  color: $primary-color;
+  background-color: transparent;
+  border-color: $primary-color;
+  
+  &:hover {
+    color: $white;
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+.btn-outline-secondary {
+  color: $secondary-color;
+  background-color: transparent;
+  border-color: $secondary-color;
+  
+  &:hover {
+    color: $white;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+}
+
+.btn-outline-accent {
+  color: $accent-color;
+  background-color: transparent;
+  border-color: $accent-color;
+  
+  &:hover {
+    color: $white;
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.btn-ghost {
+  color: $primary-color;
+  background-color: transparent;
+  border-color: transparent;
+  
+  &:hover {
+    color: $primary-dark;
+    background-color: rgba($primary-color, 0.1);
+  }
+}
+
+.btn-light {
+  color: $dark-color;
+  background-color: $light-color;
+  border-color: $light-color;
+  
+  &:hover {
+    color: $dark-color;
+    background-color: darken($light-color, 10%);
+    border-color: darken($light-color, 10%);
+  }
+}
+
+.btn-dark {
+  color: $white;
+  background-color: $dark-color;
+  border-color: $dark-color;
+  
+  &:hover {
+    color: $white;
+    background-color: lighten($dark-color, 10%);
+    border-color: lighten($dark-color, 10%);
+  }
+}
+
+// Button with icons
+.btn-icon {
+  padding: $spacing-sm;
+  border-radius: $border-radius-md;
+  
+  &.btn-sm {
+    padding: $spacing-xs;
+  }
+  
+  &.btn-lg {
+    padding: $spacing-md;
+  }
+}
+
+// Button groups
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+  
+  .btn {
+    position: relative;
+    flex: 1 1 auto;
+    
+    &:not(:first-child) {
+      margin-left: -1px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    &:focus,
+    &:hover,
+    &:active {
+      z-index: 1;
+    }
+  }
+}
+
+// Full width button
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Loading state
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+} 

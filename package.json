@@ -1,0 +1,37 @@
+{
+  "name": "sass-framework",
+  "version": "1.0.0",
+  "description": "Un framework CSS moderno construido con Sass",
+  "main": "css/main.css",
+  "scripts": {
+    "build": "sass scss/main.scss:css/main.css --style compressed",
+    "build:expanded": "sass scss/main.scss:css/main.css --style expanded",
+    "watch": "sass scss/main.scss:css/main.css --watch",
+    "dev": "sass scss/main.scss:css/main.css --watch --style expanded",
+    "clean": "rm -rf css/*.css css/*.css.map",
+    "serve": "python3 -m http.server 8000",
+    "start": "npm run dev & npm run serve"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "framework",
+    "responsive",
+    "components",
+    "utilities"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuusuario/sass-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tuusuario/sass-framework/issues"
+  },
+  "homepage": "https://github.com/tuusuario/sass-framework#readme"
+} 
